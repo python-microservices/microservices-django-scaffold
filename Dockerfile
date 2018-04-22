@@ -16,4 +16,4 @@ ADD . $APP_HOME
 EXPOSE 8000
 USER python
 
-CMD ["gunicorn", "--worker-class", "eventlet", "--workers", "8", "--log-level", "INFO", "--bind", "0.0.0.0:8000", "project.wsgi"]
+CMD ["gunicorn", "--worker-class", "gevent", "--workers", "8", "--log-level", "INFO", "--bind", "0.0.0.0:8000", "project.wsgi"]
