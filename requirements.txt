@@ -1,5 +1,0 @@
-django==3.0.2
-djangorestframework==3.11.0
-django-opentracing==1.1.0
-django-rest-swagger==2.2.0
-jaeger-client==4.3.0
