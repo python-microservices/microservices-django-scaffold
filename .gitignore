@@ -105,3 +105,4 @@ ENV/
 pylintReport.txt
 db.sqlite3
 _build
+django_scaffold.egg-info

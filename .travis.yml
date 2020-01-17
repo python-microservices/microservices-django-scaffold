@@ -1,0 +1,18 @@
+language: python
+sudo: false
+cache: false
+python:
+    - '3.6'
+install:
+  - pip install -rrequirements-tests.txt
+
+script:
+  - coverage erase
+  - tox
+after_success:
+  - coverage combine
+  - coveralls
+
+notifications:
+  email:
+    - a.vara.1986@gmail.com

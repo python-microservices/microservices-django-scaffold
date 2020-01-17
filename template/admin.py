@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from template.models import Color
+
+
+class ColorAdmin(admin.ModelAdmin):
+    date_hierarchy = 'timestamp'
+
+
+admin.site.register(Color, ColorAdmin)
