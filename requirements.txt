@@ -1,6 +1,6 @@
 -e git+https://github.com/jaegertracing/jaeger-client-python.git#egg=jaeger_client
 Django==3.0.2
 -e git+https://github.com/avara1986/python-django.git#egg=django_opentracing
-django-rest-swagger==2.1.2
+django-rest-swagger==2.2.0
 djangorestframework==3.8.2
 requests==2.18.4
