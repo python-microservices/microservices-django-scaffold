@@ -2,5 +2,5 @@
 Django==3.0.2
 -e git+https://github.com/avara1986/python-django.git#egg=django_opentracing
 django-rest-swagger==2.2.0
-djangorestframework==3.8.2
+djangorestframework==3.11.0
 requests==2.18.4
