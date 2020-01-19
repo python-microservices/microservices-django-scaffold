@@ -27,5 +27,5 @@ def test_view_with_data():
     Color.objects.get_or_create(name='red')
     response = c.get('/template/')
     assert response.status_code == 200
-    assert response.data[0]["id"] == 1
+    assert len(response.data[0]["idpublic"]) > 0
     assert response.data[0]["name"] == "red"
