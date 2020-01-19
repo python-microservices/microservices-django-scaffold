@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_opentracing',
     'rest_framework',
-    'rest_framework_swagger',
+    'rest_framework.authtoken',
     'template',
 ]
 

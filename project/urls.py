@@ -12,23 +12,28 @@ Class-based views
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+
+Try a private URL
+curl -X POST http://127.0.0.1:8000/api-token-auth/ -d '{"username": "admin", "password": "test1234"}' -H "Content-Type: application/json"
+curl -X GET http://127.0.0.1:8000/example-private/ -H 'Authorization: Token 3f8c6c1ed1eec35a59785f6d1963bf69ac633119'
 """
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from rest_framework_swagger.views import get_swagger_view
+from rest_framework.authtoken import views
 
-from template.views import ColorViewSet
+from template.views import ColorViewSet, ColorList, ColorDetail, ExampleView
 
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
 router.register('template', ColorViewSet)
 
-schema_view = get_swagger_view(title='Template API')
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', schema_view),
+    path('template2/', ColorList.as_view()),
+    path('template2/<str:pk>/', ColorDetail.as_view()),
+    path('example-private/', ExampleView.as_view()),
     path('', include(router.urls)),
+    path('api-token-auth/', views.obtain_auth_token),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
