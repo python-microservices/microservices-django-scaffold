@@ -136,3 +136,8 @@ OPENTRACING_TRACE_ALL = True
 # default tracer is opentracing.Tracer(), which does nothing
 OPENTRACING_TRACER = django_opentracing.DjangoTracer(config.initialize_tracer())
 
+REST_FRAMEWORK = {
+    # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'DEFAULT_PAGINATION_CLASS': 'project.pagination.CustomPagination',
+    'PAGE_SIZE': 100
+}
